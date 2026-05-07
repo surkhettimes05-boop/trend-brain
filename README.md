@@ -2,6 +2,8 @@
 
 TrendBrain Core is a real backend-backed Nepal commerce trend detection system. The Vite frontend is served by the same Express process, and all dashboard data now comes from API endpoints backed by PostgreSQL and Prisma.
 
+For free staging deployment, use Vercel + Neon. See [HOSTING.md](HOSTING.md).
+
 ## What Is Real
 
 - PostgreSQL persistence through Prisma models for `Signal`, `ProductSignal`, `RetailerSignal`, `Trend`, `AIReport`, and `CollectorRun`.
