@@ -1,0 +1,65 @@
+{
+  "entities": {
+    "Signal": {
+      "title": "Market Signal",
+      "description": "Raw commercial signal captured from digital commerce or ground sources.",
+      "type": "object",
+      "properties": {
+        "source": { "type": "string" },
+        "topic": { "type": "string" },
+        "value": { "type": "number" },
+        "region": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "metadata": { "type": "object" }
+      },
+      "required": ["source", "topic", "value", "timestamp"]
+    },
+    "Trend": {
+      "title": "Analyzed Trend",
+      "description": "Synthesized market pattern derived from signal clustering.",
+      "type": "object",
+      "properties": {
+        "topic": { "type": "string" },
+        "score": { "type": "number" },
+        "velocity": { "type": "string", "enum": ["Emerging", "Accelerating", "Mainstream", "Saturating", "Declining"] },
+        "drivers": { "type": "array", "items": { "type": "string" } },
+        "nepalContext": { "type": "string" },
+        "confidence": { "type": "number" },
+        "analyzedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["topic", "score", "velocity"]
+    },
+    "Recommendation": {
+      "title": "Strategic Recommendation",
+      "description": "High-confidence strategic directive for business execution.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "confidence": { "type": "number" },
+        "impact": { "type": "string", "enum": ["Critical", "High", "Medium", "Low"] },
+        "label": { "type": "string", "enum": ["STRONG BUY", "TEST IMMEDIATELY", "EARLY POSITIONING", "MONITOR CLOSELY", "AVOID COMPLETELY"] },
+        "generatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "description", "label"]
+    },
+    "Collector": {
+      "title": "Collector Agent",
+      "description": "Status and performance metrics of a specialized data ingestion agent.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "status": { "type": "string", "enum": ["Active", "Error", "Sleeping"] },
+        "lastFetch": { "type": "string", "format": "date-time" },
+        "latency": { "type": "string" }
+      },
+      "required": ["name", "status"]
+    }
+  },
+  "firestore": {
+    "/signals": { "schema": "Signal", "description": "Global raw market signals repository." },
+    "/trends": { "schema": "Trend", "description": "Active market trends analyzed by TRENDBRAIN CORE AI." },
+    "/recommendations": { "schema": "Recommendation", "description": "Strategic intelligence dossiers." },
+    "/collectors": { "schema": "Collector", "description": "Registry of active collection agents." }
+  }
+}
