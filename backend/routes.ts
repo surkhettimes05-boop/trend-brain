@@ -1,8 +1,8 @@
 import type { Express } from "express";
-import { collectDaraz } from "./collectors/daraz";
-import { collectGoogleTrends } from "./collectors/googleTrends";
-import { checkDatabase, prisma } from "./db";
-import { runAnalysis } from "./aiAnalyzer";
+import { collectDaraz } from "./collectors/daraz.js";
+import { collectGoogleTrends } from "./collectors/googleTrends.js";
+import { checkDatabase, prisma } from "./db.js";
+import { runAnalysis } from "./aiAnalyzer.js";
 import { darazCategories, trackedKeywords } from "../config/trackedKeywords.js";
 
 const asyncRoute =

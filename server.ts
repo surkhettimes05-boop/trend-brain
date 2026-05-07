@@ -2,8 +2,8 @@ import "dotenv/config";
 import express from "express";
 import { createServer as createViteServer } from "vite";
 import path from "path";
-import { createApp } from "./backend/app";
-import { startCronJobs } from "./backend/cron";
+import { createApp } from "./backend/app.js";
+import { startCronJobs } from "./backend/cron.js";
 
 async function startServer() {
   const app = createApp();

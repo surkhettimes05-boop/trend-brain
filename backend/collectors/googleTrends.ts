@@ -1,6 +1,6 @@
 import { spawn } from "child_process";
 import path from "path";
-import { prisma } from "../db";
+import { prisma } from "../db.js";
 
 export interface GoogleTrendPoint {
   keyword: string;

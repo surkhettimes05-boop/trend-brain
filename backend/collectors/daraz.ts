@@ -1,6 +1,6 @@
 import axios from "axios";
 import * as cheerio from "cheerio";
-import { prisma } from "../db";
+import { prisma } from "../db.js";
 
 const complaintWords = [
   "broken",

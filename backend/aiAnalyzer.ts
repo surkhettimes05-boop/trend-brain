@@ -1,5 +1,5 @@
-import { prisma } from "./db";
-import { lifecycleStage, scoreTrend } from "./scoring";
+import { prisma } from "./db.js";
+import { lifecycleStage, scoreTrend } from "./scoring.js";
 
 const systemPrompt =
   "You are TrendBrain Core, an AI commerce intelligence system for Nepal. Your job is to convert internet, retailer, marketplace, and consumer signals into strategic business decisions. Do not give generic startup advice. Focus on Nepal ground reality, retailer behavior, distribution feasibility, margins, trend durability, and bad-bet detection.";

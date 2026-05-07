@@ -2,7 +2,7 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 
 export default async function handler(_req: VercelRequest, res: VercelResponse) {
   try {
-    const { checkDatabase } = await import("../backend/db");
+    const { checkDatabase } = await import("../backend/db.js");
     const db = await checkDatabase();
     res.json({
       status: db.ok ? "ok" : "needs_setup",

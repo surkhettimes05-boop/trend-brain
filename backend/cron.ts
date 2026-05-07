@@ -1,7 +1,7 @@
 import cron from "node-cron";
-import { collectDaraz } from "./collectors/daraz";
-import { collectGoogleTrends } from "./collectors/googleTrends";
-import { runAnalysis } from "./aiAnalyzer";
+import { collectDaraz } from "./collectors/daraz.js";
+import { collectGoogleTrends } from "./collectors/googleTrends.js";
+import { runAnalysis } from "./aiAnalyzer.js";
 import { darazCategories, trackedKeywords } from "../config/trackedKeywords.js";
 
 export function startCronJobs() {
